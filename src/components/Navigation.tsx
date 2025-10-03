@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Leaf, Menu, Globe, Star, Zap } from "lucide-react";
+import { Leaf, Menu, Globe, Star, Zap, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -29,6 +29,7 @@ export function Navigation() {
     { href: "/scanner", label: "Plant Scanner" },
     { href: "/market", label: "Market Insights" },
     { href: "/learn", label: "Learning" },
+    { href: "/leaderboard", label: "Leaderboard" },
   ];
 
   const languages = [
@@ -66,6 +67,14 @@ export function Navigation() {
         </div>
 
         <div className="flex items-center gap-3">
+          {/* Leaderboard Quick Access */}
+          <Link href="/leaderboard" className="hidden sm:block">
+            <Button variant="outline" size="sm" className="gap-2 hover:bg-yellow-50 hover:border-yellow-300 transition-colors">
+              <Trophy className="h-4 w-4 text-yellow-600" />
+              <span className="hidden md:inline">Leaderboard</span>
+            </Button>
+          </Link>
+
           {/* Level & XP Display */}
           <Link href="/learn" className="hidden sm:block">
             <div className="flex items-center gap-3 px-3 py-1.5 rounded-lg border bg-card hover:bg-accent transition-colors cursor-pointer">
